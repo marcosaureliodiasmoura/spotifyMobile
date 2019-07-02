@@ -1,5 +1,5 @@
 import { call, put } from 'redux-saga/effects';
-import api from '../../services/api';
+import api from '../../services/api-json-server';
 
 import PodcastsActions from '../ducks/podcasts';
 
