@@ -7,7 +7,7 @@ import PodcastsActions from '../../store/ducks/podcasts';
 import {
   Container, PodcastList, Podcast, PageTitle, Cover, Info, Title, Count,
 } from './styles';
-// import podcasts from './projectText';
+// import podcasts from '../../../jsonPodcast/podcastsJson';
 
 class Main extends Component {
   componentDidMount() {
@@ -15,10 +15,16 @@ class Main extends Component {
     loadRequest();
   }
 
+  handlePodcastPress = (podcast) => {
+    const { navigation } = this.props;
+
+    navigation.navigate('Podcast', { podcast });
+  };
+
   render() {
     const { podcasts } = this.props;
 
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <Container>
         {!!podcasts.data && (
@@ -27,7 +33,7 @@ class Main extends Component {
             data={podcasts.data || []}
             keyExtractor={podcast => String(podcast.id)}
             renderItem={({ item: podcast }) => (
-              <Podcast onPress={() => {}}>
+              <Podcast onPress={() => this.handlePodcastPress(podcast)}>
                 <Cover source={{ uri: podcast.cover }} />
                 <Info>
                   <Title>{podcast.title}</Title>
