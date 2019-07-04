@@ -16,6 +16,8 @@ import {
   Title,
 } from './styles';
 
+import Player from '../../components/Player';
+
 export default class Podcast extends Component {
   handleBack = () => {
     // Pega a propriedade navigation das nossas props
@@ -58,6 +60,7 @@ export default class Podcast extends Component {
             </Episode>
           )}
         />
+        <Player />
       </Container>
     );
   }

@@ -6,6 +6,24 @@ import SignIn from './pages/SignIn';
 import Main from './pages/Main';
 import Podcast from './pages/Podcast';
 
+import Player from './components/Player';
+
+// const Routes = createAppContainer(
+//   createStackNavigator(
+//     {
+//       Main,
+//       Podcast,
+//     },
+//     {
+//       defaultNavigationOptions: {
+//         header: null,
+//       },
+//     },
+//   ),
+// );
+
+// export default Routes;
+
 export default function createNavigator(isLoggedIn = false) {
   return createAppContainer(
     createSwitchNavigator(
@@ -14,6 +32,7 @@ export default function createNavigator(isLoggedIn = false) {
           {
             Main,
             Podcast,
+            // Player,
           },
           {
             defaultNavigationOptions: {
@@ -21,6 +40,7 @@ export default function createNavigator(isLoggedIn = false) {
             },
           },
         ),
+
         SignIn,
       },
       {

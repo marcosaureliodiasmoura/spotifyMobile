@@ -9,6 +9,8 @@ import {
 } from './styles';
 // import podcasts from '../../../jsonPodcast/podcastsJson';
 
+import Player from '../../components/Player';
+
 class Main extends Component {
   componentDidMount() {
     const { loadRequest } = this.props;
@@ -43,6 +45,7 @@ class Main extends Component {
             )}
           />
         )}
+        <Player />
       </Container>
     );
   }
